@@ -1,8 +1,10 @@
+
 from aiogram import Bot, Dispatcher
+from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 from data import config
 
-bot = Bot(config.BOT_TOKEN, parse_mode=ParseMode.HTML)
+bot = Bot(token=config.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 stroge = MemoryStorage()
-dp = Dispatcher(storage=stroge)
+dp = Dispatcher()
